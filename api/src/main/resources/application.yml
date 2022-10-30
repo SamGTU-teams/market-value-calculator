@@ -1,0 +1,23 @@
+spring:
+#  datasource:
+#    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:startup}
+#    username: ${DB_USER:postgres}
+#    password: ${DB_PASS:toxic}
+#  liquibase:
+#    change-log: classpath:db/changelog/changelog-master.xml
+  jackson:
+    default-property-inclusion: NON_NULL
+
+server:
+  shutdown: GRACEFUL
+  forward-headers-strategy: NATIVE
+  servlet:
+    context-path: ${SERVER_PREFIX:/}
+
+management:
+  server:
+    port: ${MANAGEMENT_SERVER_PORT:8081}
+  endpoint:
+    health:
+      enabled: true
+
