@@ -16,6 +16,9 @@ jobs:
   node-build:
     name: Node build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./client
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v3.1.0
@@ -24,8 +27,6 @@ jobs:
         uses: actions/setup-node@v3.5.1
         with:
           cache: 'yarn'
-
-      - run: cd client
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
