@@ -24,7 +24,7 @@ jobs:
 
       - name: Run test
         working-directory: ./api
-        run: ./gradlew test --stacktrace
+        run: gradle test --stacktrace
 
       - name: Archive test report
         uses: actions/upload-artifact@v2
@@ -34,7 +34,7 @@ jobs:
 
       - name: Run assemble
         working-directory: ./api
-        run: ./gradlew assemble --stacktrace
+        run: gradle assemble --stacktrace
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
