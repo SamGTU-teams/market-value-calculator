@@ -16,6 +16,9 @@ jobs:
   gradle-build:
     name: Gradle build and run tests
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./api
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v3.1.0
@@ -23,11 +26,9 @@ jobs:
         uses: gradle/gradle-build-action@v2.3.3
 
       - name: Run assemble
-        working-directory: ./api
         run: gradle assemble --stacktrace
 
       - name: Run test
-        working-directory: ./api
         run: gradle test --stacktrace
 
       - name: Archive test report
