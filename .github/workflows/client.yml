@@ -59,7 +59,7 @@ jobs:
         uses: docker/metadata-action@v4.1.1
         with:
           images: |
-            ghcr.io/rassafel/market-calculator-client
+            ghcr.io/samgtu-teams/market-calculator-client
           tags: |
             type=ref,event=branch
             type=ref,event=pr
